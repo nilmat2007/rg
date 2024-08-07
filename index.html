@@ -85,102 +85,126 @@
             const food = document.getElementById('food').value;
 
             const flexMessage = {
-                type: "bubble",
-                size: "giga",
-                body: {
-                    type: "box",
-                    layout: "vertical",
-                    contents: [
-                        {
-                            type: "text",
-                            text: "รายชื่อผู้ลงทะเบียน",
-                            weight: "bold",
-                            size: "xl",
-                            align: "center",
-                            color: "#1DB446",
-                            margin: "md"
-                        },
-                        {
-                            type: "separator",
-                            color: "#1DB446",
-                            margin: "md"
-                        },
-                        {
-                            type: "text",
-                            text: date,
-                            size: "xs",
-                            color: "#aaaaaa",
-                            align: "center",
-                            margin: "md"
-                        },
-                        {
-                            type: "text",
-                            text: location,
-                            size: "xs",
-                            color: "#aaaaaa",
-                            align: "center",
-                            margin: "md"
-                        },
-                        {
-                            type: "text",
-                            text: time,
-                            size: "xs",
-                            color: "#aaaaaa",
-                            align: "center",
-                            margin: "md"
-                        },
-                        {
-                            type: "separator",
-                            color: "#1DB446",
-                            margin: "md"
-                        },
-                        {
-                            type: "box",
-                            layout: "vertical",
-                            margin: "md",
-                            contents: [
-                                {
-                                    type: "box",
-                                    layout: "horizontal",
-                                    contents: [
-                                        {
-                                            type: "text",
-                                            text: name,
-                                            size: "md",
-                                            color: "#333333",
-                                            flex: 2,
-                                            margin: "sm",
-                                            wrap: true
-                                        },
-                                        {
-                                            type: "text",
-                                            text: status,
-                                            size: "md",
-                                            color: "#FF0000",
-                                            align: "end",
-                                            flex: 1,
-                                            margin: "sm"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            type: "separator",
-                            color: "#1DB446",
-                            margin: "md"
-                        },
-                        {
-                            type: "text",
-                            text: food,
-                            size: "sm",
-                            color: "#aaaaaa",
-                            align: "center",
-                            margin: "md"
-                        }
-                    ]
-                }
-            };
+  "type": "bubble",
+  "size": "giga",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "รายชื่อผู้ลงทะเบียน",
+        "weight": "bold",
+        "size": "xl",
+        "align": "center",
+        "color": "#1DB446",
+        "margin": "md"
+      },
+      {
+        "type": "separator",
+        "color": "#1DB446",
+        "margin": "md"
+      },
+      {
+        "type": "text",
+        "text": date,
+        "size": "xs",
+        "color": "#aaaaaa",
+        "align": "center",
+        "margin": "md"
+      },
+      {
+        "type": "text",
+        "text": location,
+        "size": "xs",
+        "color": "#aaaaaa",
+        "align": "center",
+        "margin": "md"
+      },
+      {
+        "type": "text",
+        "text": time,
+        "size": "xs",
+        "color": "#aaaaaa",
+        "align": "center",
+        "margin": "md"
+      },
+      {
+        "type": "separator",
+        "color": "#1DB446",
+        "margin": "md"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": name,
+                "size": "md",
+                "color": "#333333",
+                "flex": 2,
+                "margin": "sm",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": status,
+                "size": "md",
+                "color": "#FF0000",
+                "align": "end",
+                "flex": 1,
+                "margin": "sm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "color": "#1DB446",
+        "margin": "md"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "contents": [
+              {
+                "type": "text",
+                "text": "อาหาร:",
+                "size": "md",
+                "color": "#333333",
+                "flex": 1,
+                "margin": "sm",
+                "wrap": true,
+                "align": "end"
+              },
+              {
+                "type": "text",
+                "text": food,
+                "size": "md",
+                "color": "#FF0000",
+                "align": "start",
+                "flex": 1,
+                "margin": "sm"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+};
 
             liff.shareTargetPicker([
                 {
