@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แชร์ข้อมูลการลงทะเบียน</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">แก้ไขข้อมูลก่อนแชร์</h1>
+        <form id="shareForm">
+            <div class="form-group">
+                <label for="date">วันที่:</label>
+                <input type="text" class="form-control" id="date" placeholder="วันอาทิตย์ที่ 28 กรกฎาคม 2567">
+            </div>
+            <div class="form-group">
+                <label for="location">สถานที่:</label>
+                <input type="text" class="form-control" id="location" placeholder="โรงเรียนสอนออนไลน์ รามอินทรา">
+            </div>
+            <div class="form-group">
+                <label for="time">เวลา:</label>
+                <input type="text" class="form-control" id="time" placeholder="เวลา: 09:00 น. ถึง 18:00 น.">
+            </div>
+            <div class="form-group">
+                <label for="name">ชื่อผู้ลงทะเบียน:</label>
+                <input type="text" class="form-control" id="name" placeholder="คุณเอมมี่ ไวทยศาสตริน(เอมมี่)">
+            </div>
+            <div class="form-group">
+                <label for="status">สถานะ:</label>
+                <input type="text" class="form-control" id="status" placeholder="รอแจ้งสลิป">
+            </div>
+            <div class="form-group">
+                <label for="food">อาหาร:</label>
+                <input type="text" class="form-control" id="food" placeholder="อาหาร: **แพ้กุ้ง**">
+            </div>
+            <button type="button" class="btn btn-primary btn-block" onclick="updateAndShare()">อัปเดตและแชร์</button>
+        </form>
+    </div>
+
+    <script>
+        function initializeLiff(myLiffId) {
+            liff.init({ liffId: myLiffId })
+                .then(() => {
+                    console.log('LIFF initialized successfully');
+                })
+                .catch((err) => {
+                    console.error('LIFF Initialization failed ', err);
+                });
+        }
+
+        function updateAndShare() {
+            const date = document.getElementById('date').value;
+            const location = document.getElementById('location').value;
+            const time = document.getElementById('time').value;
+            const name = document.getElementById('name').value;
+            const status = document.getElementById('status').value;
+            const food = document.getElementById('food').value;
+
+            const flexMessage = {
+                type: "bubble",
+                size: "giga",
+                body: {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
+                        {
+                            type: "text",
+                            text: "รายชื่อผู้ลงทะเบียน",
+                            weight: "bold",
+                            size: "xl",
+                            align: "center",
+                            color: "#1DB446",
+                            margin: "md"
+                        },
+                        {
+                            type: "separator",
+                            color: "#1DB446",
+                            margin: "md"
+                        },
+                        {
+                            type: "text",
+                            text: date,
+                            size: "xs",
+                            color: "#aaaaaa",
+                            align: "center",
+                            margin: "md"
+                        },
+                        {
+                            type: "text",
+                            text: location,
+                            size: "xs",
+                            color: "#aaaaaa",
+                            align: "center",
+                            margin: "md"
+                        },
+                        {
+                            type: "text",
+                            text: time,
+                            size: "xs",
+                            color: "#aaaaaa",
+                            align: "center",
+                            margin: "md"
+                        },
+                        {
+                            type: "separator",
+                            color: "#1DB446",
+                            margin: "md"
+                        },
+                        {
+                            type: "box",
+                            layout: "vertical",
+                            margin: "md",
+                            contents: [
+                                {
+                                    type: "box",
+                                    layout: "horizontal",
+                                    contents: [
+                                        {
+                                            type: "text",
+                                            text: name,
+                                            size: "md",
+                                            color: "#333333",
+                                            flex: 2,
+                                            margin: "sm",
+                                            wrap: true
+                                        },
+                                        {
+                                            type: "text",
+                                            text: status,
+                                            size: "md",
+                                            color: "#FF0000",
+                                            align: "end",
+                                            flex: 1,
+                                            margin: "sm"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            type: "separator",
+                            color: "#1DB446",
+                            margin: "md"
+                        },
+                        {
+                            type: "text",
+                            text: food,
+                            size: "sm",
+                            color: "#aaaaaa",
+                            align: "center",
+                            margin: "md"
+                        }
+                    ]
+                }
+            };
+
+            liff.shareTargetPicker([
+                {
+                    type: "flex",
+                    altText: "ข้อมูลการลงทะเบียน",
+                    contents: flexMessage
+                }
+            ])
+            .then(() => {
+                console.log('Message sent');
+                liff.closeWindow();
+            })
+            .catch((err) => {
+                console.error('Error sending message: ', err);
+            });
+        }
+
+        initializeLiff('2005615503-LrkN185v');
+    </script>
+</body>
+</html>
