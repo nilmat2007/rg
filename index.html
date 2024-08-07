@@ -9,33 +9,59 @@
 </head>
 <body>
     <div class="container mt-4">
-        <h1 class="text-center mb-4">แก้ไขข้อมูลก่อนแชร์</h1>
+        <h1 class="text-center mb-4">ลงทะเบียนส่งการ์ดให้นักเรียน</h1>
         <form id="shareForm">
             <div class="form-group">
-                <label for="date">วันที่:</label>
-                <input type="text" class="form-control" id="date" placeholder="วันอาทิตย์ที่ 28 กรกฎาคม 2567">
-            </div>
+    <label for="date">วันที่:</label>
+    <select class="form-control" id="date">
+        <option value="" disabled selected>เลือกวัน</option>
+        <option value="วันศุกร์ที่ 9 สิงหาคม 2567">วันศุกร์ที่ 9 สิงหาคม 2567</option>
+        <option value="วันอังคารที่ 13 สิงหาคม 2567">วันอังคารที่ 13 สิงหาคม 2567</option>
+        <option value="วันศุกร์ที่ 16 สิงหาคม 2567">วันศุกร์ที่ 16 สิงหาคม 2567</option>
+        <option value="วันอาทิตย์ที่ 18 สิงหาคม 2567">วันอาทิตย์ที่ 18 สิงหาคม 2567</option>
+        <option value="วันอังคารที่ 20 สิงหาคม 2567">วันอังคารที่ 20 สิงหาคม 2567</option>
+        <option value="วันศุกร์ที่ 23 สิงหาคม 2567">วันศุกร์ที่ 23 สิงหาคม 2567</option>
+        <option value="วันอาทิตย์ที่ 25 สิงหาคม 2567">วันอาทิตย์ที่ 25 สิงหาคม 2567</option>
+        <option value="วันอังคารที่ 27 สิงหาคม 2567">วันอังคารที่ 27 สิงหาคม 2567</option>
+        <option value="วันศุกร์ที่ 30 สิงหาคม 2567">วันศุกร์ที่ 30 สิงหาคม 2567</option>
+    </select>
+</div>
             <div class="form-group">
                 <label for="location">สถานที่:</label>
-                <input type="text" class="form-control" id="location" placeholder="โรงเรียนสอนออนไลน์ รามอินทรา">
+    <select class="form-control" id="location">
+        <option value="" disabled selected>เลือกสถานที่</option>
+        <option value="โรงเรียนสอนออนไลน์ รามอินทรา">โรงเรียนสอนออนไลน์ รามอินทรา</option>
+        <option value="โรงแรมบางแสนวิลล่า อ.เมือง จ.ชลบุรี">โรงแรมบางแสนวิลล่า อ.เมือง จ.ชลบุรี</option>
+        <option value="Magic Museum Hatyat จ.สงขลา">Magic Museum Hatyat จ.สงขลา</option>
+        <option value="เรียนออนไลน์(Zoom)">เรียนออนไลน์(Zoom)</option>
+    </select>
             </div>
             <div class="form-group">
                 <label for="time">เวลา:</label>
-                <input type="text" class="form-control" id="time" placeholder="เวลา: 09:00 น. ถึง 18:00 น.">
+    <select class="form-control" id="time">
+        <option value="" disabled selected>เลือกเวลา</option>
+        <option value="เวลา: 09:00 น. ถึง 18:00 น.">เวลา: 09:00 น. ถึง 18:00 น.</option>
+        <option value="เวลา: 19:00 น. ถึง 21:00 น.">เวลา: 19:00 น. ถึง 21:00 น.</option>
+    </select>
             </div>
             <div class="form-group">
                 <label for="name">ชื่อผู้ลงทะเบียน:</label>
-                <input type="text" class="form-control" id="name" placeholder="คุณเอมมี่ ไวทยศาสตริน(เอมมี่)">
+                <input type="text" class="form-control" id="name" placeholder="ชื่อจริง-นามสกุล(ชื่อเล่น)">
             </div>
             <div class="form-group">
                 <label for="status">สถานะ:</label>
-                <input type="text" class="form-control" id="status" placeholder="รอแจ้งสลิป">
+    <select class="form-control" id="status">
+        <option value="" disabled selected>เลือกสถานะ</option>
+        <option value="รอแจ้งสลิป">รอแจ้งสลิป</option>
+        <option value="ชำระหน้างาน">ชำระหน้างาน</option>
+        <option value="ชำระแล้ว">ชำระแล้ว</option>
+    </select>
             </div>
             <div class="form-group">
                 <label for="food">อาหาร:</label>
-                <input type="text" class="form-control" id="food" placeholder="อาหาร: **แพ้กุ้ง**">
+                <input type="text" class="form-control" id="food" placeholder="อาหาร: ปกติ หรือ ยกเว้นอาหารประเภทอะไร">
             </div>
-            <button type="button" class="btn btn-primary btn-block" onclick="updateAndShare()">อัปเดตและแชร์</button>
+            <button type="button" class="btn btn-primary btn-block" onclick="updateAndShare()">บันทึกและส่ง</button>
         </form>
     </div>
 
