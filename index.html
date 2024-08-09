@@ -12,61 +12,76 @@
         <h1 class="text-center mb-4">ลงทะเบียนส่งการ์ดให้นักเรียน</h1>
         <form id="shareForm">
             <div class="form-group">
-    <label for="date">วันที่:</label>
-    <select class="form-control" id="date">
-        <option value="" disabled selected>เลือกวัน</option>
-        <option value="ONLINE">ONLINE</option>
-        <option value="วันศุกร์ที่ 9 สิงหาคม 2567">วันศุกร์ที่ 9 สิงหาคม 2567</option>
-        <option value="วันอังคารที่ 13 สิงหาคม 2567">วันอังคารที่ 13 สิงหาคม 2567</option>
-        <option value="วันศุกร์ที่ 16 สิงหาคม 2567">วันศุกร์ที่ 16 สิงหาคม 2567</option>
-        <option value="วันอาทิตย์ที่ 18 สิงหาคม 2567">วันอาทิตย์ที่ 18 สิงหาคม 2567</option>
-        <option value="วันอังคารที่ 20 สิงหาคม 2567">วันอังคารที่ 20 สิงหาคม 2567</option>
-        <option value="วันศุกร์ที่ 23 สิงหาคม 2567">วันศุกร์ที่ 23 สิงหาคม 2567</option>
-        <option value="วันอาทิตย์ที่ 25 สิงหาคม 2567">วันอาทิตย์ที่ 25 สิงหาคม 2567</option>
-        <option value="วันอังคารที่ 27 สิงหาคม 2567">วันอังคารที่ 27 สิงหาคม 2567</option>
-        <option value="วันศุกร์ที่ 30 สิงหาคม 2567">วันศุกร์ที่ 30 สิงหาคม 2567</option>
-    </select>
-</div>
+                <label for="date">วันที่:</label>
+                <select class="form-control" id="date" required>
+                    <option value="" disabled selected>เลือกวัน</option>
+                    <option value="ONLINE">ONLINE</option>
+                    <option value="วันศุกร์ที่ 9 สิงหาคม 2567">วันศุกร์ที่ 9 สิงหาคม 2567</option>
+                    <option value="วันอังคารที่ 13 สิงหาคม 2567">วันอังคารที่ 13 สิงหาคม 2567</option>
+                    <option value="วันศุกร์ที่ 16 สิงหาคม 2567">วันศุกร์ที่ 16 สิงหาคม 2567</option>
+                    <option value="วันอาทิตย์ที่ 18 สิงหาคม 2567">วันอาทิตย์ที่ 18 สิงหาคม 2567</option>
+                    <option value="วันอังคารที่ 20 สิงหาคม 2567">วันอังคารที่ 20 สิงหาคม 2567</option>
+                    <option value="วันศุกร์ที่ 23 สิงหาคม 2567">วันศุกร์ที่ 23 สิงหาคม 2567</option>
+                    <option value="วันอาทิตย์ที่ 25 สิงหาคม 2567">วันอาทิตย์ที่ 25 สิงหาคม 2567</option>
+                    <option value="วันอังคารที่ 27 สิงหาคม 2567">วันอังคารที่ 27 สิงหาคม 2567</option>
+                    <option value="วันศุกร์ที่ 30 สิงหาคม 2567">วันศุกร์ที่ 30 สิงหาคม 2567</option>
+                </select>
+            </div>
             <div class="form-group">
                 <label for="location">สถานที่:</label>
-    <select class="form-control" id="location">
-        <option value="" disabled selected>เลือกสถานที่</option>
-        <option value="โรงเรียนสอนออนไลน์ รามอินทรา">โรงเรียนสอนออนไลน์ รามอินทรา</option>
-        <option value="โรงแรมบางแสนวิลล่า อ.เมือง จ.ชลบุรี">โรงแรมบางแสนวิลล่า อ.เมือง จ.ชลบุรี</option>
-        <option value="Magic Museum Hatyat จ.สงขลา">Magic Museum Hatyat จ.สงขลา</option>
-        <option value="เรียนออนไลน์(Zoom)">เรียนออนไลน์(Zoom)</option>
-    </select>
+                <select class="form-control" id="location" onchange="updateMapLink()" required>
+                    <option value="" disabled selected>เลือกสถานที่</option>
+                    <option value="โรงเรียนสอนออนไลน์ รามอินทรา" data-url="https://goo.gl/maps/example1">โรงเรียนสอนออนไลน์ รามอินทรา</option>
+                    <option value="โรงแรมบางแสนวิลล่า อ.เมือง จ.ชลบุรี" data-url="https://goo.gl/maps/example2">โรงแรมบางแสนวิลล่า อ.เมือง จ.ชลบุรี</option>
+                    <option value="Magic Museum Hatyat จ.สงขลา" data-url="https://goo.gl/maps/example3">Magic Museum Hatyat จ.สงขลา</option>
+                    <option value="เรียนออนไลน์(Zoom)" data-url="https://zoom.us/example">เรียนออนไลน์(Zoom)</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="time">เวลา:</label>
-    <select class="form-control" id="time">
-        <option value="" disabled selected>เลือกเวลา</option>
-        <option value="เวลา: 09:00 น. ถึง 18:00 น.">เวลา: 09:00 น. ถึง 18:00 น.</option>
-        <option value="เวลา: 19:00 น. ถึง 21:00 น.">เวลา: 19:00 น. ถึง 21:00 น.</option>
-    </select>
+                <select class="form-control" id="time" required>
+                    <option value="" disabled selected>เลือกเวลา</option>
+                    <option value="เวลา: 09:00 น. ถึง 18:00 น.">เวลา: 09:00 น. ถึง 18:00 น.</option>
+                    <option value="เวลา: 19:00 น. ถึง 21:00 น.">เวลา: 19:00 น. ถึง 21:00 น.</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="name">ชื่อผู้ลงทะเบียน:</label>
-                <input type="text" class="form-control" id="name" placeholder="ชื่อจริง-นามสกุล(ชื่อเล่น)">
+                <input type="text" class="form-control" id="name" placeholder="ชื่อจริง-นามสกุล(ชื่อเล่น)" required>
             </div>
             <div class="form-group">
                 <label for="status">สถานะ:</label>
-    <select class="form-control" id="status">
-        <option value="" disabled selected>เลือกสถานะ</option>
-        <option value="รอแจ้งสลิป">รอแจ้งสลิป</option>
-        <option value="ชำระหน้างาน">ชำระหน้างาน</option>
-        <option value="ชำระแล้ว">ชำระแล้ว</option>
-    </select>
+                <select class="form-control" id="status" required>
+                    <option value="" disabled selected>เลือกสถานะ</option>
+                    <option value="รอแจ้งสลิป">รอแจ้งสลิป</option>
+                    <option value="ชำระหน้างาน">ชำระหน้างาน</option>
+                    <option value="ชำระแล้ว">ชำระแล้ว</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="food">อาหาร:</label>
-                <input type="text" class="form-control" id="food" placeholder="อาหาร: ปกติ หรือ ยกเว้นอาหารประเภทอะไร">
+                <input type="text" class="form-control" id="food" placeholder="อาหาร: ปกติ หรือ ยกเว้นอาหารประเภทอะไร" required>
+            </div>
+            <div id="mapLink" class="mb-3">
+                <a href="" target="_blank" id="mapUrl">ลิงก์แผนที่</a>
             </div>
             <button type="button" class="btn btn-primary btn-block" onclick="updateAndShare()">บันทึกและส่ง</button>
         </form>
     </div>
 
     <script>
+        let mapUrl = '';
+
+        function updateMapLink() {
+            const locationSelect = document.getElementById('location');
+            const selectedOption = locationSelect.options[locationSelect.selectedIndex];
+            mapUrl = selectedOption.getAttribute('data-url');
+            const mapLink = document.getElementById('mapUrl');
+
+            mapLink.href = mapUrl;
+            mapLink.textContent = "ลิงก์แผนที่: " + selectedOption.text;
+        }
+
         function initializeLiff(myLiffId) {
             liff.init({ liffId: myLiffId })
                 .then(() => {
@@ -85,189 +100,198 @@
             const status = document.getElementById('status').value;
             const food = document.getElementById('food').value;
 
-            const flexMessage = {
-  "type": "bubble",
-  "size": "giga",
-  "header": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "ขอแสดงความยินดีต้อนรับเข้าสู่",
-            "color": "#C0A080",
-            "align": "center",
-            "size": "xs",
-            "weight": "bold"
-          },
-          {
-            "type": "text",
-            "text": "คลาสเรียน TikTok Shop\nครูส้มโอ ส่งออก AEC",
-            "weight": "bold",
-            "size": "lg",
-            "align": "center",
-            "color": "#FFFFFF",
-            "margin": "md",
-            "wrap": true
-          }
-        ]
-      }
-    ],
-    "paddingAll": "20px",
-    "backgroundColor": "#1A1A1A",
-    "paddingTop": "22px",
-    "paddingBottom": "22px"
-  },
-  "hero": {
-    "type": "image",
-    "url": "https://lh3.googleusercontent.com/d/11YT2lfYzCPB954v3OIGByeUQLwX59o0j",
-    "size": "full",
-    "aspectRatio": "20:13",
-    "aspectMode": "cover"
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": date,
-        "size": "sm",
-        "color": "#FFFFFF",
-        "margin": "md",
-        "align": "center"
-      },
-      {
-        "type": "text",
-        "text": location,
-        "size": "sm",
-        "color": "#FFFFFF",
-        "margin": "md",
-        "align": "center"
-      },
-      {
-        "type": "text",
-        "text": time,
-        "size": "sm",
-        "color": "#FFFFFF",
-        "margin": "md",
-        "align": "center"
-      },
-      {
-        "type": "separator",
-        "margin": "xl",
-        "color": "#C0A080"
-      },
-      {
-        "type": "box",
-        "layout": "horizontal",
-        "contents": [
-          {
-            "type": "text",
-            "text": name,
-            "size": "md",
-            "color": "#FFFFFF",
-            "weight": "bold",
-            "wrap": true,
-            "align": "center"
-          }
-        ],
-        "margin": "xl"
-      },
-      {
-        "type": "separator",
-        "margin": "xl",
-        "color": "#C0A080"
-      },
-      {
-        "type": "box",
-        "layout": "horizontal",
-        "contents": [
-          {
-            "type": "text",
-            "text": "สถานะ:",
-            "size": "lg",
-            "color": "#FFFFFF",
-            "weight": "bold",
-            "wrap": true,
-            "align": "center",
-            "offsetTop": "1px"
-          },
-          {
-            "type": "text",
-            "text": status,
-            "size": "lg",
-            "color": "#C0A080",
-            "align": "start",
-            "weight": "bold",
-            "offsetTop": "-1px"
-          }
-        ],
-        "margin": "xl"
-      },
-      {
-        "type": "separator",
-        "margin": "xl",
-        "color": "#C0A080"
-      },
-      {
-        "type": "box",
-        "layout": "horizontal",
-        "contents": [
-          {
-            "type": "text",
-            "text": "อาหาร: ",
-            "size": "sm",
-            "color": "#C0A080",
-            "flex": 1,
-            "align": "end",
-            "offsetEnd": "5px"
-          },
-          {
-            "type": "text",
-            "text": food,
-            "size": "sm",
-            "color": "#FFFFFF",
-            "align": "start",
-            "flex": 1,
-            "offsetStart": "5px",
-            "offsetTop": "1px"
-          }
-        ],
-        "margin": "md"
-      }
-    ],
-    "backgroundColor": "#2A2A2A",
-    "paddingAll": "20px"
-  },
-  "styles": {
-    "footer": {
-      "separator": false
-    }
-  }
-};
+            if (!date || !location || !time || !name || !status || !food) {
+                alert('กรุณากรอกข้อมูลให้ครบทุกช่อง');
+                return;
+            }
 
-            liff.shareTargetPicker([
-                {
-                    type: "flex",
-                    altText: "ข้อมูลการลงทะเบียน",
-                    contents: flexMessage
+            const flexMessage = {
+                "type": "bubble",
+                "size": "giga",
+                "header": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "ขอแสดงความยินดีต้อนรับเข้าสู่",
+                                    "color": "#C0A080",
+                                    "align": "center",
+                                    "size": "xs",
+                                    "weight": "bold"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "คลาสเรียน TikTok Shop\nครูส้มโอ ส่งออก AEC",
+                                    "weight": "bold",
+                                    "size": "lg",
+                                    "align": "center",
+                                    "color": "#FFFFFF",
+                                    "margin": "md",
+                                    "wrap": true
+                                }
+                            ]
+                        }
+                    ],
+                    "paddingAll": "20px",
+                    "backgroundColor": "#1A1A1A",
+                    "paddingTop": "22px",
+                    "paddingBottom": "22px"
+                },
+                "hero": {
+                    "type": "image",
+                    "url": "https://lh3.googleusercontent.com/d/11YT2lfYzCPB954v3OIGByeUQLwX59o0j",
+                    "size": "full",
+                    "aspectRatio": "20:13",
+                    "aspectMode": "cover"
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "text",
+                            "text": date,
+                            "size": "sm",
+                            "color": "#FFFFFF",
+                            "margin": "md",
+                            "align": "center"
+                        },
+                        {
+                            "type": "text",
+                            "text": location,
+                            "size": "sm",
+                            "color": "#FFFFFF",
+                            "margin": "md",
+                            "align": "center",
+                            "action": {
+                                "type": "uri",
+                                "label": "ดูแผนที่",
+                                "uri": mapUrl
+                            }
+                        },
+                        {
+                            "type": "text",
+                            "text": time,
+                            "size": "sm",
+                            "color": "#FFFFFF",
+                            "margin": "md",
+                            "align": "center"
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "xl",
+                            "color": "#C0A080"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": name,
+                                    "size": "md",
+                                    "color": "#FFFFFF",
+                                    "weight": "bold",
+                                    "wrap": true,
+                                    "align": "center"
+                                }
+                            ],
+                            "margin": "xl"
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "xl",
+                            "color": "#C0A080"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "สถานะ:",
+                                    "size": "lg",
+                                    "color": "#FFFFFF",
+                                    "weight": "bold",
+                                    "wrap": true,
+                                    "align": "center",
+                                    "offsetTop": "1px"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": status,
+                                    "size": "lg",
+                                    "color": "#C0A080",
+                                    "align": "start",
+                                    "weight": "bold",
+                                    "offsetTop": "-1px"
+                                }
+                            ],
+                            "margin": "xl"
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "xl",
+                            "color": "#C0A080"
+                        },
+                        {
+                            "type": "box",
+                            "layout": "horizontal",
+                            "contents": [
+                                {
+                                    "type": "text",
+                                    "text": "อาหาร: ",
+                                    "size": "sm",
+                                    "color": "#C0A080",
+                                    "flex": 1,
+                                    "align": "end",
+                                    "offsetEnd": "5px"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": food,
+                                    "size": "sm",
+                                    "color": "#FFFFFF",
+                                    "align": "start",
+                                    "flex": 1,
+                                    "offsetStart": "5px",
+                                    "offsetTop": "1px"
+                                }
+                            ],
+                            "margin": "md"
+                        }
+                    ],
+                    "backgroundColor": "#2A2A2A",
+                    "paddingAll": "20px"
+                },
+                "styles": {
+                    "footer": {
+                        "separator": false
+                    }
                 }
-            ])
-            .then(() => {
+            };
+
+            liff.sendMessages([{
+                "type": "flex",
+                "altText": "แชร์ข้อมูลการลงทะเบียน",
+                "contents": flexMessage
+            }]).then(() => {
                 console.log('Message sent');
                 liff.closeWindow();
-            })
-            .catch((err) => {
+            }).catch((err) => {
                 console.error('Error sending message: ', err);
+                alert('เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง');
             });
         }
 
-        initializeLiff('2005615503-LrkN185v');
+        window.onload = function () {
+            initializeLiff('2005615503-LrkN185v'); // แทนที่ 'YOUR_LIFF_ID' ด้วย LIFF ID ของคุณ
+        }
     </script>
 </body>
 </html>
